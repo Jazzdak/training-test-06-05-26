@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{  conference.id ? 'Edit ' ~ conference.name : 'New conference'  }}
+{% endblock %}
+
+{% block body %}
+<section class="container row row-cols-1">
+    <div class="col-md-8 mx-auto">
+        <h1>{{ conference.id ? "Edit \"#{conference.name}\"" : 'New conference' }}</h1>
+    </div>
+
+    {{ include('includes/_form.html.twig', {button_label: 'Save'}) }}
+</section>
+{% endblock %}
